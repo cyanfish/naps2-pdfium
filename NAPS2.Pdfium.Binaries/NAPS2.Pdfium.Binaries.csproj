@@ -1,0 +1,73 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net462;netstandard2.0;net6.0</TargetFrameworks>
+        <RootNamespace>NAPS2.Pdfium.Binaries</RootNamespace>
+        <Title>NAPS2.Pdfium.Binaries</Title>
+        <Product>NAPS2.Pdfium.Binaries</Product>
+
+        <Version>1.0.0</Version>
+        <PackageVersion>1.0.0</PackageVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+
+        <Copyright>Copyright 2023 Ben Olden-Cooligan (note: pdfium has separate copyrights)</Copyright>
+        <LangVersion>10</LangVersion>
+        <Authors>Ben Olden-Cooligan</Authors>
+        <Description>Pdfium binaries for NAPS2.Sdk</Description>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <RepositoryUrl>https://github.com/cyanfish/naps2-pdfium</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/cyanfish/naps2-pdfium</PackageProjectUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageTags>naps2 pdf pdfium</PackageTags>
+        <SignAssembly>true</SignAssembly>
+        <AssemblyOriginatorKeyFile>public_signing_key.snk</AssemblyOriginatorKeyFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Content Include="NAPS2.Pdfium.Binaries.targets" PackagePath="build/NAPS2.Pdfium.Binaries.targets" />
+        <None Include="..\artifacts\mac-arm64\libpdfium.dylib">
+            <Link>lib/mac-arm64/libpdfium.dylib</Link>
+            <Pack>true</Pack>
+            <PackageCopyToOutput>true</PackageCopyToOutput>
+            <PackagePath>contentFiles/_macarm</PackagePath>
+        </None>
+        <None Include="..\artifacts\mac-x64\libpdfium.dylib">
+            <Link>lib/mac-x64/libpdfium.dylib</Link>
+            <Pack>true</Pack>
+            <PackageCopyToOutput>true</PackageCopyToOutput>
+            <PackagePath>contentFiles/_mac</PackagePath>
+        </None>
+        <None Include="..\artifacts\linux-arm64\libpdfium.so">
+            <Link>lib/linux-arm64/libpdfium.so</Link>
+            <Pack>true</Pack>
+            <PackageCopyToOutput>true</PackageCopyToOutput>
+            <PackagePath>contentFiles/_linuxarm</PackagePath>
+        </None>
+        <None Include="..\artifacts\linux-x64\libpdfium.so">
+            <Link>lib/linux-x64/libpdfium.so</Link>
+            <Pack>true</Pack>
+            <PackageCopyToOutput>true</PackageCopyToOutput>
+            <PackagePath>contentFiles/_linux</PackagePath>
+        </None>
+        <None Include="..\artifacts\win-x64\pdfium.dll">
+            <Link>lib/win-x64/pdfium.dll</Link>
+            <Pack>true</Pack>
+            <PackageCopyToOutput>true</PackageCopyToOutput>
+            <PackagePath>contentFiles/_win64</PackagePath>
+        </None>
+        <None Include="..\artifacts\win-x86\pdfium.dll">
+            <Link>lib/win-x86/pdfium.dll</Link>
+            <Pack>true</Pack>
+            <PackageCopyToOutput>true</PackageCopyToOutput>
+            <PackagePath>contentFiles/_win32</PackagePath>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="..\LICENSE" Pack="true" PackagePath="\" />
+        <None Include="..\README.md" Pack="true" PackagePath="\" />
+    </ItemGroup>
+
+</Project>
