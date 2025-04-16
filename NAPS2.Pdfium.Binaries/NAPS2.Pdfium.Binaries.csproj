@@ -6,8 +6,8 @@
         <Title>NAPS2.Pdfium.Binaries</Title>
         <Product>NAPS2.Pdfium.Binaries</Product>
 
-        <Version>1.1.0</Version>
-        <PackageVersion>1.1.0</PackageVersion>
+        <Version>1.2.0</Version>
+        <PackageVersion>1.2.0</PackageVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
 
         <Copyright>Copyright 2023 Ben Olden-Cooligan (note: pdfium has separate copyrights)</Copyright>
@@ -62,6 +62,12 @@
             <Pack>true</Pack>
             <PackageCopyToOutput>true</PackageCopyToOutput>
             <PackagePath>contentFiles/_win32</PackagePath>
+        </None>
+        <None Include="..\artifacts\win-arm64\pdfium.dll">
+            <Link>lib/win-arm64/pdfium.dll</Link>
+            <Pack>true</Pack>
+            <PackageCopyToOutput>true</PackageCopyToOutput>
+            <PackagePath>contentFiles/_winarm</PackagePath>
         </None>
     </ItemGroup>
 
